@@ -179,9 +179,9 @@ public class MainActivity extends AppCompatActivity implements AIListener, View.
             }
         });
 
-        Button popbutton=findViewById(R.id.submitbutton);
+        Button uplaod=findViewById(R.id.submitbutton);
 
-        popbutton.setOnClickListener(new View.OnClickListener() {
+        uplaod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 View switchB1 = findViewById(R.id.switch1);
@@ -282,8 +282,23 @@ public class MainActivity extends AppCompatActivity implements AIListener, View.
         return super.onOptionsItemSelected(item);
     }
 
+    public void Clear(View view){
+        View switchB1 = findViewById(R.id.switch1);
+        View switchB2 = findViewById(R.id.switch2);
+        View switchB3 = findViewById(R.id.switch3);
+
+        switchB1.setVisibility(View.INVISIBLE);
+        switchB2.setVisibility(View.INVISIBLE);
+        switchB3.setVisibility(View.INVISIBLE);
+        this.count=0;
+        this.count1=0;
+        this.count2=0;
+        textView.setText(String.valueOf(count));
+        textView1.setText(String.valueOf(count1));
+        textView2.setText(String.valueOf(count2));
+    }
     public void doThis(MenuItem item) {
-        Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+        Intent intent = new Intent(MainActivity.this, Main4Activity.class);
         startActivity(intent);
     }
     public void second(MenuItem item){
